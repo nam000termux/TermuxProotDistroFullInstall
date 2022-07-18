@@ -40,5 +40,5 @@ proot-distro login debian -- apt install python3 -y &>/dev/null
 proot-distro login debian -- wget https://raw.githubusercontent.com/nam000termux/TermuxProotDistroFullInstall/main/script/passwd -P /root/.vnc &>/dev/null
 screen -U -d -m proot-distro login debian -- python3 start.py &>/dev/null
 printf "${light_cyan}Ip: localhost:5901(You can try localhost:5902, localhost:5903 if you can't connect)"
-printf "${light_cyan}Default password: localhost:5901(You can try localhost:5902, localhost:5903 if you can't connect)"
+printf "${light_cyan}Default password: Creeda"
 proot-distro login debian -- cra help
