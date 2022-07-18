@@ -1,3 +1,4 @@
+clear
 red='\033[1;31m' 2> /dev/null
 green='\033[1;32m' 2> /dev/null
 yellow='\033[1;33m' 2> /dev/null
@@ -34,4 +35,8 @@ proot-distro login debian -- apt install firefox-esr -y &>/dev/null
 printf "\n${blue}[*] Dang khoi dong vnc....${reset}\n"
 proot-distro login debian -- wget https://raw.githubusercontent.com/nam000termux/TermuxProotDistroFullInstall/main/script/start.py &>/dev/null
 proot-distro login debian -- apt install python3 -y &>/dev/null
+proot-distro login debian -- wget https://raw.githubusercontent.com/nam000termux/TermuxProotDistroFullInstall/main/script/passwd -P /root/.vnc &>/dev/null
 screen -U -d -m proot-distro login debian -- python3 start.py &>/dev/null
+printf "${light_cyan}Ip: localhost:5901(You can try localhost:5902, localhost:5903 if you can't connect)"
+printf "${light_cyan}Default password: localhost:5901(You can try localhost:5902, localhost:5903 if you can't connect)"
+proot-distro login debian -- cra help
