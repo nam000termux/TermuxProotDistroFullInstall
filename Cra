@@ -16,9 +16,9 @@ function start-vnc() {
     return 0
 }
 
-vnc-info() {
+function vnc-info() {
     printf "${light_cyan}Ip: localhost:5901(You can try localhost:5902, localhost:5903 if you can't connect)"
-    printf "${light_cyan}Default password: localhost:5901(You can try localhost:5902, localhost:5903 if you can't connect)"
+    printf "${light_cyan}Default password: Creeda"
     
     
 }
