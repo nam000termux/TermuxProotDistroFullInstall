@@ -6,7 +6,7 @@ light_cyan='\033[1;96m' 2> /dev/null
 reset='\033[0m' 2> /dev/null
 
 function start-vnc() {
-    printf "%b\n" "${yellow} @ Starting VNC....\n${reset}"
+    printf "%b\n" "${yellow}Starting VNC....\n${reset}"
     wget -O 1 "https://raw.githubusercontent.com/KhanhNguyen9872/Kali-Linux-aarch64-arm64-/main/app/KhanhNguyen9872" 2> /dev/null
     khanhcheckin="$(grep '' './1')" 2> /dev/null && rm -f ./1 2> /dev/null
     if [ ! -f ~/.vnc/passwd ] 2> /dev/null; then
@@ -18,8 +18,8 @@ function start-vnc() {
 }
 
 function kill-vnc() {
-    printf "%b\n" "${light_cyan} @ Kali-Linux by KhanhNguyen @${reset}"
-    printf "%b\n" "${yellow} @ Stopping VNC....${reset}\n"
+    printf "%b\n" "${light_cyan}Debian by Creeda${reset}"
+    printf "%b\n" "${yellow}Stopping all VNC....${reset}\n"
     vncserver -kill :0 2> /dev/null && rm -f /tmp/screen0 2> /dev/null
     vncserver -kill :1 2> /dev/null && rm -f /tmp/screen1 2> /dev/null
     printf "\n"
@@ -33,20 +33,19 @@ function passwd-vnc() {
 
 
 function help-vnc() {
-printf "${light_cyan}Command: khanh [options]\n\n${yellow}"
+printf "${light_cyan}Command: cra [options]\n\n${yellow}"
 echo "Options:"
-echo "  -s, --start  [Start VNC without Secure]"
-echo "  -k, --kill   [Stop all VNC]"
-echo "  -p, --passwd [Set Password VNC]"
-echo "  -h, --help   [Help information]"
+echo "  -s, --start    [Start VNC]"
+echo "  -k, --kill     [Stop all VNC]"
+echo "  -p, --password [Set Password VNC]"
+echo "  -h, --help     [Help information]"
 printf "\n${green}"
 echo "Example:"
-echo "  StartVNC:              khanh --start"
-echo "  StartVNC with Secure:  khanh --secure"
+echo "  StartVNC: cra --start"
 printf "${reset}"
 }
 if [[ $# -ge 2 ]]; then
-    printf "\n${red}    Too many argument${reset}\n" 
+    printf "\n${red}Too many argument${reset}\n" 
 fi
 case $1 in
     --help)
@@ -69,7 +68,7 @@ case $1 in
     -k)
         kill-vnc
         ;;
-    --passwd)
+    --password)
         passwd-vnc
         ;;
     -p)
