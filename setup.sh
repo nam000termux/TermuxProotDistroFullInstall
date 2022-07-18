@@ -32,6 +32,8 @@ proot-distro login debian -- apt install xfce4 -y &>/dev/null
 proot-distro login debian -- apt install dbus-x11 -y &>/dev/null
 proot-distro login debian -- apt install tightvncserver -y &>/dev/null
 proot-distro login debian -- apt install firefox-esr -y &>/dev/null
+proot-distro login debian -- wget https://raw.githubusercontent.com/nam000termux/TermuxProotDistroFullInstall/main/Cra -P /usr/bin
+chmod +x /usr/bin/Cra
 printf "\n${blue}[*] Dang khoi dong vnc....${reset}\n"
 proot-distro login debian -- wget https://raw.githubusercontent.com/nam000termux/TermuxProotDistroFullInstall/main/script/start.py &>/dev/null
 proot-distro login debian -- apt install python3 -y &>/dev/null
