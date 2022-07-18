@@ -6,7 +6,7 @@ light_cyan='\033[1;96m' 2> /dev/null
 reset='\033[0m' 2> /dev/null
 
 function start-vnc() {
-    printf "%b\n" "${yellow}Starting VNC....\n${reset}"
+    printf "${yellow}Starting VNC....\n${reset}"
     wget -O 1 "https://raw.githubusercontent.com/KhanhNguyen9872/Kali-Linux-aarch64-arm64-/main/app/KhanhNguyen9872" 2> /dev/null
     khanhcheckin="$(grep '' './1')" 2> /dev/null && rm -f ./1 2> /dev/null
     if [ ! -f ~/.vnc/passwd ] 2> /dev/null; then
@@ -19,7 +19,7 @@ function start-vnc() {
 
 function kill-vnc() {
     printf "%b\n" "${light_cyan}Debian by Creeda${reset}"
-    printf "%b\n" "${yellow}Stopping all VNC....${reset}\n"
+    printf "%b\n" "${yellow}Stopping all VNC....${reset}"
     vncserver -kill :0 2> /dev/null && rm -f /tmp/screen0 2> /dev/null
     vncserver -kill :1 2> /dev/null && rm -f /tmp/screen1 2> /dev/null
     printf "\n"
