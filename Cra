@@ -8,13 +8,19 @@ reset='\033[0m' 2> /dev/null
 function start-vnc() {
     printf "${yellow}Starting VNC....\n${reset}"
     wget -O 1 "https://raw.githubusercontent.com/KhanhNguyen9872/Kali-Linux-aarch64-arm64-/main/app/KhanhNguyen9872" 2> /dev/null
-    khanhcheckin="$(grep '' './1')" 2> /dev/null && rm -f ./1 2> /dev/null
     if [ ! -f ~/.vnc/passwd ] 2> /dev/null; then
         passwd-vnc
     fi
     nohup vncserver -geometry 1366x768 >/dev/null 2>&1 </dev/null
     starting_kex=1 2> /dev/null
     return 0
+}
+
+vnc-info() {
+    printf "${light_cyan}Ip: localhost:5901(You can try localhost:5902, localhost:5903 if you can't connect)"
+    printf "${light_cyan}Default password: localhost:5901(You can try localhost:5902, localhost:5903 if you can't connect)"
+    
+    
 }
 
 function kill-vnc() {
