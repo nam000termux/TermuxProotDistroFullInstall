@@ -18,10 +18,10 @@ function start() {
 }
 
 function kill-vnc() {
-    printf "%b\n" "${light_cyan} @ Kali-Linux by KhanhNguyen @${reset}"
+    printf "%b\n" "${light_cyan} @ Debian by Creeda @${reset}"
     printf "%b\n" "${yellow} @ Stopping VNC....${reset}\n"
-    proot-distro login debian -- vncserver -kill :0 2> /dev/null && rm -f /tmp/screen0 2> /dev/null
-    proot-distro login debian -- vncserver -kill :1 2> /dev/null && rm -f /tmp/screen1 2> /dev/null
+    proot-distro login debian -- vncserver -kill :0 2> /dev/null && proot-distro login debian -- rm -f /tmp/screen0 2> /dev/null
+    proot-distro login debian -- vncserver -kill :1 2> /dev/null && proot-distro login debian -- rm -f /tmp/screen1 2> /dev/null
     printf "\n"
     return 0
 }
@@ -33,7 +33,7 @@ function passwd-vnc() {
 
 }
 function help-vnc() {
-printf "${light_cyan}Command: khanh [options]\n\n${yellow}"
+printf "${light_cyan}Command: Cra [options]\n\n${yellow}"
 echo "Options:"
 echo "  -sv, --startvnc [Start debian with VNC]"
 echo "  -s, --start     [Start debian]"
