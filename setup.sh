@@ -1,4 +1,4 @@
-23540red='\033[1;31m' 2> /dev/null
+red='\033[1;31m' 2> /dev/null
 green='\033[1;32m' 2> /dev/null
 yellow='\033[1;33m' 2> /dev/null
 blue='\033[1;34m' 2> /dev/null
